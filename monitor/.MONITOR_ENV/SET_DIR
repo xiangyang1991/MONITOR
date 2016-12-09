@@ -1,0 +1,10 @@
+#!/bin/bash
+. ~/.bash_profile
+
+#set Tools dir
+Tools="${MONITOR_HOME}/Tools"
+Access="${Tools}/Access"
+Clean="${Tools}/Clean"
+Common="${Tools}/Common"
+DB="${Tools}/DB"
+Load="${Tools}/Load"
