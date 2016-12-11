@@ -7,9 +7,9 @@ if [ $# -lt 1 ];then
 else
     day="${yesterday}"
 fi
-/usr/bin/expect <<-EOF
+/usr/bin/expect -c "
 spawn ssh mpp2@10.136.139.19 /home/mpp2/mpp-engine/monitor/mpp-count.sh $day
-expect {"*password:*"}
-send "liuge1\r"
+expect \"*password:*\"
+send \"liuge1\r\"
 interact
-EOF
+"
