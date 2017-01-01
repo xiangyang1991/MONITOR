@@ -1,14 +1,19 @@
 #!/bin/bash
 . ~/.bash_profile
-
 #set Tools dir
 Tools="${MONITOR_HOME}/Tools"
-Access="${Tools}/Access"
-Clean="${Tools}/Clean"
-Common="${Tools}/Common"
-DB="${Tools}/DB"
-	MongoDB="${DB}/Mongo"
-	MppDB="${DB}/Mpp"
-Load="${Tools}/Load"
-	MongoLoad="${Load}/Mongo"
-	MppLoad="${Load}/Mpp"
+	Access="${Tools}/Access"
+	Clean="${Tools}/Clean"
+	Common="${Tools}/Common"
+	DB="${Tools}/DB"
+		MongoDB="${DB}/Mongo"
+		MppDB="${DB}/Mpp"
+	Load="${Tools}/Load"
+		MongoLoad="${Load}/Mongo"
+		MppLoad="${Load}/Mpp"
+	HardWare="${Tools}/HardWare"
+
+Service="${MONITOR_HOME}/Service"
+	mq="${Service}/mq"	
+	Swx="${Service}/wx"	
+	Swb="${Service}/wb"	

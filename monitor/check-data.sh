@@ -9,3 +9,5 @@
 echo ${MONITOR_ENV}
 echo ${MONITOR_HOME}
 echo -e "${green_1}${Load}${end}"
+echo -e "${green_1}${MppDB}${end}"
+${MppDB}/data2mpp.sh 2016-12-12 recount

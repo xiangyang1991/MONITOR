@@ -8,5 +8,5 @@ if [ -f ${cache_file} ];then
     cat ${cache_file}
 else
     res=`ssh mongodb@10.136.139.21 "/home/mongodb/mongodb-3.2.9/bin/mongo 10.136.139.21:23456 /home/mongodb/ycl-datacount/weibo_yw.js"`
-    echo "${res}" | tee -a ${cache_file}
+    echo "${res}" | tee ${cache_file}
 fi

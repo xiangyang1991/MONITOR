@@ -1,0 +1,21 @@
+#!/bin/bash
+. /etc/profile
+. ~/.bash_profile
+. ${MONITOR_ENV}/.ENV_FILE 
+current_time=`date +%Y-%m-%d`
+if [ $# -lt 1 ];then
+	day=${current_time}
+else
+	day=$1
+fi
+
+if [ -f ${MppLoad}/.cache/dataLoad2mpp.$day ]&&[ "$2" != "recount" ];then
+	cat ${MppLoad}/.cache/dataLoad2mpp.$day
+else
+	/usr/bin/expect -c "
+	spawn ssh dpl@10.136.64.37 \"/home/dpl/project/mpp-bdap-loader/bin/checktotal.sh $day; cat /home/dpl/.tmpwb\"
+	        expect \"password:\"
+	        send \"dpl\r\"
+	interact
+	" | tee ${MppLoad}/.cache/dataLoad2mpp.$day
+fi
